@@ -1,0 +1,55 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<cmpt-swiper mode="aspectFill" indicatorActiveColor="#07716B" height="350" images="{{enroll.ENROLL_OBJ.album}}" />
+	<view class="main-enroll-detail">
+		<view class="title">{{enroll.ENROLL_TITLE}}</view>
+
+		<view class="item">
+			<view class="item-title text-project"><text class="icon-titles" />招生进度 </view>
+			<view class="line-process">
+				<view class="line-process-inner">
+					<view class="left">报名时间：</view>
+					<view class="right">{{enroll.start}} ~ {{enroll.end}}</view>
+				</view>
+				<view class="line-process-inner">
+					<view class="left">招生人数：</view>
+					<view class="right">{{enroll.ENROLL_MAX_CNT+'人'||'不限'}}</view>
+				</view>
+				<view class="line-process-inner">
+					<view class="left">报名状态：</view>
+					<view class="right">{{enroll.statusDesc}}</view>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="item">
+			<view class="item-title text-project"><text class="icon-titles" />详细介绍</view>
+			<view class="item-desc">
+				<block wx:for="{{enroll.ENROLL_OBJ.intro}}" wx:key="key">
+				<view class="content" wx:if="{{item.type=='text'}}">
+					<text user-select="{{true}}">{{item.val}}</text>
+				</view>
+
+				<view class="pics" wx:if="{{item.type=='img'}}">
+					<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+					</image>
+				</view>
+			</block>
+			
+			</view>
+		</view>
+
+	</view>
+
+	<cmpt-detail mode="mode1" doSlot="{{true}}" topBtnShow="{{topBtnShow}}" tag="{{enroll.myEnrollJoinId?'已登记':''}}" oid="{{enroll._id}}" cate="{{enroll.ENROLL_CATE_NAME}}" title="{{enroll.ENROLL_TITLE}}" tag="{{enroll.myEnrollJoinId?'已报名':''}}" cover="{{enroll.ENROLL_OBJ.cover[0]}}" qr="{{enroll.ENROLL_QR}}" desc="查看详情" bg="{{skin.PROJECT_COLOR}}">
+		<view bindtap="bindJoinTap" wx:if="{{enroll.statusDesc=='进行中'&&!enroll.myEnrollJoinId}}" class="cmpt-biz-detail-mode1-join cur">点击报名</view>
+
+		<view bindtap="bindCancelJoinTap" wx:elif="{{enroll.myEnrollJoinId}}" class="cmpt-biz-detail-mode1-join">取消报名</view>
+
+		<view wx:else class="cmpt-biz-detail-mode1-join">{{enroll.statusDesc}}</view>
+	</cmpt-detail>
+
+</block>

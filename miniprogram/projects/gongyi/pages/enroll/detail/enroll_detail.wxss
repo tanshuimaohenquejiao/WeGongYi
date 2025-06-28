@@ -1,0 +1,123 @@
+@import "../../../style/skin.wxss";
+
+.main-enroll-detail {
+	width: 100%;
+}
+
+.main-enroll-detail .title {
+	width: 100%;
+	text-align: center;
+	font-size: 34rpx;
+	color: #000;
+	padding: 25rpx 0;
+	background-color: #fff;
+	margin-bottom: 30rpx;
+}
+
+.main-enroll-detail .item {
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30rpx;
+}
+
+.main-enroll-detail .item-title {
+	width: 100%;
+	text-align: left;
+	font-size: 32rpx;
+	padding: 20rpx 20rpx 10rpx 20rpx;
+}
+
+.main-enroll-detail .item-desc {
+	width: 100%;
+	text-align: left;
+	font-size: 28rpx;
+	padding: 10rpx 30rpx 20rpx 50rpx;
+	color: #000;
+}
+
+.main-enroll-detail .line-process {
+	width: 100%;
+	margin-top: 10rpx;
+	padding: 20rpx 30rpx 20rpx 30rpx;
+	border-top: 1rpx solid #eee;
+	font-size: 28rpx;
+}
+
+.main-enroll-detail .line-process .line-process-inner {
+	width: 100%;
+	text-align: left;
+	color: #000;
+	display: flex;
+	padding: 15rpx 0rpx;
+}
+
+.main-enroll-detail .line-process .line-process-inner:first-child {
+	border-bottom: 1rpx dashed #eee;
+}
+
+.main-enroll-detail .line-process .line-process-inner .left {
+	width: 250rpx;
+	font-weight: bold;
+}
+
+.main-enroll-detail .line-process .line-process-inner .right {
+	width: 100%;
+}
+
+
+.main-enroll-detail .item .line3 {
+	width: 100%;
+	display: flex;
+	padding: 20rpx;
+	border-top: 1rpx solid #eee;
+	margin-top: 15rpx;
+}
+
+.main-enroll-detail .item .line3 .line-item {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.main-enroll-detail .item .line3 .line-item .txt1 {
+	color: #777;
+	font-size: 24rpx;
+}
+
+.main-enroll-detail .item .line3 .line-item .txt2 {
+	color: #333;
+	font-size: 26rpx;
+	margin-top: 10rpx;
+}
+
+.main-enroll-detail .item .line3 .line-item:nth-child(1)::after,
+.main-enroll-detail .item .line3 .line-item:nth-child(2)::after {
+	content: " ";
+	position: absolute;
+	top: 50%;
+	right: 0rpx;
+	height: 80%;
+	width: 1rpx;
+	border-radius: 2rpx;
+	background-color: #ccc;
+	transform: translateY(-50%)
+}
+
+.cmpt-biz-detail-mode1-join {
+	flex: 1 0 0;
+	box-shadow: unset !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--projectColor)
+}
+
+.cmpt-biz-detail-mode1-join.cur {
+	background-image: linear-gradient(var(--projectColor), var(--projectColorLight));
+	color: #fff;
+}

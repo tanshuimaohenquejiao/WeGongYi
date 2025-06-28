@@ -1,0 +1,8 @@
+{
+	"usingComponents": { 
+		"cmpt-detail": "/cmpts/biz/detail/detail_cmpt",
+		"cmpt-swiper": "/cmpts/public/swiper/swiper_cmpt"
+	},
+	"enablePullDownRefresh": true,  
+	"navigationBarTitleText": "报名详情"
+}

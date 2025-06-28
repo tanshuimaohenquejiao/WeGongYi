@@ -1,0 +1,96 @@
+{
+	"pages": [
+		"projects/gongyi/pages/default/index/default_index",
+		"projects/gongyi/pages/about/index/about_index",
+		"projects/gongyi/pages/search/search",
+		"projects/gongyi/pages/my/index/my_index",
+		"projects/gongyi/pages/my/reg/my_reg",
+		"projects/gongyi/pages/my/edit/my_edit",
+		"projects/gongyi/pages/my/foot/my_foot",
+		"projects/gongyi/pages/my/fav/my_fav",
+		"projects/gongyi/pages/news/index/news_index",
+		"projects/gongyi/pages/news/detail/news_detail",
+		"projects/gongyi/pages/news/cate1/news_cate1",
+		"projects/gongyi/pages/admin/news/list/admin_news_list",
+		"projects/gongyi/pages/admin/news/add/admin_news_add",
+		"projects/gongyi/pages/admin/news/edit/admin_news_edit",
+		"projects/gongyi/pages/admin/setup/about/admin_setup_about",
+		"projects/gongyi/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/gongyi/pages/admin/setup/qr/admin_setup_qr",
+		"projects/gongyi/pages/admin/index/home/admin_home",
+		"projects/gongyi/pages/admin/index/login/admin_login",
+		"projects/gongyi/pages/admin/content/admin_content",
+		"projects/gongyi/pages/admin/mgr/log/admin_log_list",
+		"projects/gongyi/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/gongyi/pages/admin/mgr/list/admin_mgr_list",
+		"projects/gongyi/pages/admin/mgr/add/admin_mgr_add",
+		"projects/gongyi/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/gongyi/pages/admin/user/list/admin_user_list",
+		"projects/gongyi/pages/admin/user/detail/admin_user_detail",
+		"projects/gongyi/pages/admin/user/export/admin_user_export",
+		"projects/gongyi/pages/enroll/index/enroll_index",
+		"projects/gongyi/pages/enroll/join/enroll_join",
+		"projects/gongyi/pages/enroll/detail/enroll_detail",
+		"projects/gongyi/pages/enroll/my_join_list/enroll_my_join_list",
+		"projects/gongyi/pages/enroll/my_join_detail/enroll_my_join_detail",
+		"projects/gongyi/pages/enroll/join_edit/enroll_join_edit",
+		"projects/gongyi/pages/admin/enroll/list/admin_enroll_list",
+		"projects/gongyi/pages/admin/enroll/add/admin_enroll_add",
+		"projects/gongyi/pages/admin/enroll/edit/admin_enroll_edit",
+		"projects/gongyi/pages/admin/enroll/join_list/admin_enroll_join_list",
+		"projects/gongyi/pages/admin/enroll/export/admin_enroll_export" ,
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#07716B",
+		"navigationBarTitleText": "公益培训报名小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#07716B",
+		"list": [
+			{
+				"pagePath": "projects/gongyi/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/gongyi/images/tabbar/home.png",
+				"selectedIconPath": "/projects/gongyi/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/gongyi/pages/news/cate1/news_cate1",
+				"text": "公告通知",
+				"iconPath": "/projects/gongyi/images/tabbar/news.png",
+				"selectedIconPath": "/projects/gongyi/images/tabbar/news_cur.png"
+			},
+			{
+				"pagePath": "projects/gongyi/pages/enroll/index/enroll_index",
+				"text": "报名",
+				"iconPath": "/projects/gongyi/images/tabbar/enroll.png",
+				"selectedIconPath": "/projects/gongyi/images/tabbar/enroll_cur.png"
+			}, 
+			{
+				"pagePath": "projects/gongyi/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/gongyi/images/tabbar/my.png",
+				"selectedIconPath": "/projects/gongyi/images/tabbar/my_cur.png"
+			}
+		]
+	}, 
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

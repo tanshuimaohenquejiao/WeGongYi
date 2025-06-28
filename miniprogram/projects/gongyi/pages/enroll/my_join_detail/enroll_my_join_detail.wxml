@@ -1,0 +1,48 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<view class="main padding-project">
+		<view class="text-pic-list-box margin-top-xs">
+			<view class="item card-project shadow-project">
+				<view class="title-line" bindtap="url" data-url="../detail/enroll_detail?id={{enrollJoin.ENROLL_JOIN_ENROLL_ID}}">
+					<view class="title content-cut-two">{{enrollJoin.enroll.ENROLL_TITLE}} </view>
+					<view class="arrow"><text class="icon-right"></text></view>
+				</view>
+
+				<view class="data">
+					<text wx:if="{{enrollJoin.ENROLL_JOIN_STATUS==0}}" class="text-blue"><text class="icon-newshot margin-right-xxs"></text>待审核</text> 
+
+					<text wx:if="{{enrollJoin.ENROLL_JOIN_STATUS==1}}" class="text-green"><text class="icon-check margin-right-xxs"></text>填报成功</text> 
+
+
+					<block wx:if="{{enrollJoin.ENROLL_JOIN_STATUS==99}}">
+						<text class="text-red"><text class="icon-roundclose margin-right-xxs"></text>审核未通过<text class="text-grey" wx:if="{{enrollJoin.ENROLL_JOIN_REASON}}">：{{enrollJoin.ENROLL_JOIN_REASON}}</text></text>
+					</block>
+				</view>
+
+				<view class="oprt" wx:if="{{enrollJoin.ENROLL_JOIN_STATUS==0 || enrollJoin.ENROLL_JOIN_STATUS==1}}">
+					<view bindtap="url" data-url="../../my/index/my_index" data-type="relaunch" wx:if="{{isShowHome}}" class="btn margin-right-s">返回首页</view>
+				<!--	<view wx:if="{{isShowHome}}" bindtap="url" data-url="../my_join_list/enroll_my_join_list" data-type="relaunch" class="btn">查看我的所有登记</view>-->
+				</view>
+
+			</view>
+
+		</view>
+
+		<view class="info-list-box margin-bottom-xxl">
+			<view class="item card-project shadow-project">
+				<view class="info margin-bottom-s">
+					<view class="center text-bold">我的填报资料</view>
+				</view>
+				<view class="info" wx:for="{{enrollJoin.ENROLL_JOIN_FORMS}}" wx:key="key">
+					<view class="title">{{item.title}}：</view>
+					<view class="content">{{item.val}}</view>
+				</view>
+
+				<view class="info text-grey margin-top-xs text-s">创建时间：{{enrollJoin.ENROLL_JOIN_ADD_TIME}}</view>
+				<view wx:if="{{enrollJoin.ENROLL_JOIN_LAST_TIME!='1970-01-01 08:00:00' && enrollJoin.ENROLL_JOIN_LAST_TIME!='1970-01-01 00:00:00'}}" class="info text-grey margin-top-xs text-s">最近修改：{{enrollJoin.ENROLL_JOIN_LAST_TIME}}</view>
+			</view>
+		</view>
+	</view>
+</block>
